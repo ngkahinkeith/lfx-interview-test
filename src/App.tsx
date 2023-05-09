@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import Routes from './routes'
+import Routes from './routes';
+import './App.css';
 
 function App() {
   const queryClient = new QueryClient({
@@ -12,7 +13,9 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Routes />
+      <div className='h-screen w-screen p-4'>
+        <Routes />
+      </div>
     </QueryClientProvider>
   )
 }
