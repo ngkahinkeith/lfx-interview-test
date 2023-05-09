@@ -12,6 +12,7 @@ const routes = createBrowserRouter(
     {
       path: "/",
       element: <ListContact />,
+      errorElement: <ContactError />
     },
     {
       path: "/contact/:id",
