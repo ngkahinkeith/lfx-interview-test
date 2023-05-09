@@ -1,6 +1,7 @@
 export const listData = (name?: string) => {
     return new Promise<Contact[]>((resolve, reject) => {
-      if (name) {
+      if (name && name.length > 0) {
+        // simple filtering
       const contact = data().filter((contact) => contact.name.toLowerCase().includes(name.toLowerCase()));
       return resolve(contact);
     }

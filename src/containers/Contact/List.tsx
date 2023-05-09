@@ -30,6 +30,7 @@ function ListContact(): JSX.Element {
       title: 'Action',
       key: 'action',
       render: (_, record) => (
+          // Button to navigate user to detail page
           <Button onClick={() => navigate(`/contact/${record.id}`)}>Detail</Button>
       ),
     },
@@ -37,6 +38,7 @@ function ListContact(): JSX.Element {
 
   return (
     <>
+      {/* Search input */}
       <Input placeholder="Search by name" value={searchText} onChange={(e) => setSearchText(e.target.value)} className="mb-4" />
       <Table<Contact>
         columns={columns}
