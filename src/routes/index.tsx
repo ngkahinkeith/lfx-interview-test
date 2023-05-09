@@ -1,12 +1,11 @@
 import * as React from "react";
 import {
-  Route,
   createBrowserRouter,
-  createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
 import ListContact from "../containers/Contact/List";
 import ListDetail from "../containers/Contact/Detail";
+import ContactError from "../containers/Contact/Error";
 
 const routes = createBrowserRouter(
   [
@@ -17,6 +16,7 @@ const routes = createBrowserRouter(
     {
       path: "/contact/:id",
       element: <ListDetail />,
+      errorElement: <ContactError />
     }
   ]
 );

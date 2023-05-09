@@ -37,8 +37,13 @@ function ListContact(): JSX.Element {
 
   return (
     <>
-      <Input placeholder="Search by name" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
-      <Table<Contact> columns={columns} loading={contactList.isFetching} dataSource={contactList.data} pagination={{ position: ["bottomCenter"] }} />
+      <Input placeholder="Search by name" value={searchText} onChange={(e) => setSearchText(e.target.value)} className="mb-4" />
+      <Table<Contact>
+        columns={columns}
+        loading={contactList.isFetching}
+        dataSource={contactList.data?.map((contact) => ({key: contact.id, ...contact}))}
+        pagination={{ position: ["bottomCenter"] }}
+      />
     </>
   )
 }
