@@ -11,7 +11,6 @@ export const listData = (name?: string) => {
 export const detailData = (id: number) => {
   return new Promise<Contact>((resolve, reject) => {
     const detail = data().find((contact) => contact.id === id);
-    console.log(detail)
     if (detail) resolve(detail);
     reject("Contact not found");
   });
